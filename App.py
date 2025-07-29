@@ -4,6 +4,16 @@ import uuid
 from resume_parser.parser import extract_text_from_pdf, extract_skills
 from jd_matcher.matcher import get_similarity_score
 import pandas as pd
+import spacy
+import subprocess
+
+# Attempt to load the model; download if not found
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
+
 
 st.set_page_config(layout="wide")
 st.title("🔍 Resume Matcher and Skill Extractor")
