@@ -3,4 +3,7 @@ scikit-learn
 pymupdf
 pandas
 resume-parser
-
+streamlit
+spacy
+resume-parser
+pandas
